@@ -41,7 +41,13 @@ export function Navbar() {
     }
 
     return (
-        <div>
+        <div
+            style={{
+                display: 'flex',
+                flexFlow: 'column',
+                width: '100%',
+            }}
+        >
             <AppBar
                 position="static"
                 sx={{
@@ -142,7 +148,13 @@ export function Navbar() {
                     </Toolbar>
                 </Container>
             </AppBar>
-            <main>
+            <main
+                style={{
+                    width: '100%',
+                    padding: '2rem',
+                    backgroundColor: '#e8e8e8',
+                }}
+            >
                 {renderChosenSection()}
             </main>
         </div>
