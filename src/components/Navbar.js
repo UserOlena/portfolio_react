@@ -23,7 +23,16 @@ export function Navbar() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar 
+            position="static"
+            sx={{
+                backgroundColor: '#ffffff',
+                backgroundImage: 'url(./navbar_bg_1.svg)',
+                //backgroundAttachment: 'fixed',
+                //backgroundSize: 'cover',
+                //backgroundRepeat: 'repeat'
+            }}
+        >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -43,7 +52,11 @@ export function Navbar() {
                     >
                         Olena Pashchenko
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ 
+                        flexGrow: 1, 
+                        display: { xs: 'flex', md: 'none' } 
+                        }}
+                    >
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -96,7 +109,8 @@ export function Navbar() {
                                     marginLeft: '3rem', 
                                     borderRadius: 3, 
                                     '&:hover': {
-                                        background: '#1b5bf7',
+                                        background: 'rgb(27, 91, 247, 0.5)',
+                                        
                                     }
                                 }}
                             >
