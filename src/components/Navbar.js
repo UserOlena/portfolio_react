@@ -26,6 +26,7 @@ export function Navbar() {
         <AppBar 
             position="static"
             sx={{
+                height: '10%',
                 backgroundColor: '#ffffff',
                 backgroundImage: 'url(./navbar_bg_1.svg)',
                 //backgroundAttachment: 'fixed',
