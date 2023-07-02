@@ -56,6 +56,7 @@ export function Navbar() {
                     //backgroundAttachment: 'fixed',
                     //backgroundSize: 'cover',
                     //backgroundRepeat: 'repeat'
+                    zIndex: 1,
                 }}
             >
                 <Container maxWidth="xl">
@@ -134,11 +135,11 @@ export function Navbar() {
                                         color: 'white',
                                         display: 'block',
                                         marginLeft: '3rem',
-                                        borderRadius: 3,
+                                        borderRadius: '0.5rem',
                                         '&:hover': {
                                             background: 'rgb(27, 91, 247, 0.5)',
-
-                                        }
+                                        },
+                                        bgcolor: chosenTab === page && 'rgb(27, 91, 247, 0.5)',
                                     }}
                                 >
                                     {page}
