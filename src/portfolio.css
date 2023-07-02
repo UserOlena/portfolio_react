@@ -1,0 +1,56 @@
+.hoverLinkH3El {
+    position: absolute;
+    font-weight: bold;
+    background-color: rgba(250,250,250,0.5);
+    box-shadow: -5px 5px 15px 15px rgba(250,250,250,0.5);
+    padding: 0.5rem;
+}
+
+.hoverLinkH3ElLg {
+    font-size: calc(25px + (46 - 25) * ((100vw - 300px) / (1600 - 300)));
+    top: 4rem;
+    left: 5rem;
+}
+
+.hoverLinkH3ElMd {
+    font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300)));
+    top: 3rem;
+    left: 4rem;
+}
+
+.hoverLinkH3ElSm {
+    font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
+    top: 2rem;
+    left: 3rem;
+}
+
+.gitHubAEl {
+    margin-left: 3rem;
+}
+
+.hoverLinkAEl {
+    text-decoration: none;
+}
+
+.hoverLinkAEl, .gitHubAEl {
+    color: black;
+}
+
+.hoverLinkAEl:hover, .gitHubAEl:hover {
+    color: #404040;
+}
+
+.gridItem {
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffff;
+    box-shadow: 10px 8px 5px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.zIndex1 {
+    z-index: 1;
+}
