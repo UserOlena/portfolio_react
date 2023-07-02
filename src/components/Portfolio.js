@@ -44,6 +44,16 @@ export function Portfolio() {
         />
         {
           hover === 1 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 1)}
+            className='coverUpDiv'
+            style={{
+              marginLeft: '5rem',
+            }}
+          />
+        }
+        {
+          hover === 1 &&
           <h3
             onMouseEnter={(e) => onHover(e, 1)}
             className='hoverLinkH3ElLg hoverLinkH3El'
@@ -81,6 +91,13 @@ export function Portfolio() {
         />
         {
           hover === 2 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 2)}
+            className='coverUpDiv'
+          />
+        }
+        {
+          hover === 2 &&
           <h3
             onMouseEnter={(e) => onHover(e, 2)}
             className='hoverLinkH3El hoverLinkH3ElMd'
@@ -113,6 +130,13 @@ export function Portfolio() {
           alt='Portfolio'
           className='img'
         />
+        {
+          hover === 3 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 3)}
+            className='coverUpDiv'
+          />
+        }
         {
           hover === 3 &&
           <h3
@@ -152,6 +176,13 @@ export function Portfolio() {
         />
         {
           hover === 4 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 4)}
+            className='coverUpDiv'
+          />
+        }
+        {
+          hover === 4 &&
           <h3
             onMouseEnter={(e) => onHover(e, 4)}
             className='hoverLinkH3El hoverLinkH3ElMd'
@@ -189,6 +220,13 @@ export function Portfolio() {
         />
         {
           hover === 5 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 5)}
+            className='coverUpDiv'
+          />
+        }
+        {
+          hover === 5 &&
           <h3
             onMouseEnter={(e) => onHover(e, 5)}
             className='hoverLinkH3El hoverLinkH3ElSm'
@@ -221,6 +259,13 @@ export function Portfolio() {
           alt='Portfolio React.js'
           className='img'
         />
+        {
+          hover === 6 &&
+          <div
+            onMouseEnter={(e) => onHover(e, 6)}
+            className='coverUpDiv'
+          />
+        }
         {
           hover === 6 &&
           <h3
