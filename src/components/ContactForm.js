@@ -59,9 +59,9 @@ export function ContactForm() {
                 <Grid item xs={12} md={6}>
                   <Box sx={{ display: "flex", justifyContent: "center", }}>
                     <img
-                      src="./kindpng_1403886.png"
+                      src="./contact_me.png"
                       alt="Contact"
-                      style={{ maxWidth: "100%" }}
+                      style={{ maxWidth: "90%" }}
                     />
                   </Box>
                 </Grid>
