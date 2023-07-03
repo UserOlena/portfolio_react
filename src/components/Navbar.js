@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {
     AboutMe,
     Portfolio,
+    ContactForm,
 } from '../components';
 
 export function Navbar() {
@@ -32,6 +33,7 @@ export function Navbar() {
         switch (chosenTab) {
             case 'About Me': return <AboutMe />;
             case 'Portfolio': return <Portfolio />;
+            case 'Contact': return <ContactForm />;
         }
     }
 
@@ -139,7 +141,7 @@ export function Navbar() {
                                         '&:hover': {
                                             background: 'rgb(27, 91, 247, 0.5)',
                                         },
-                                        bgcolor: chosenTab === page && 'rgb(27, 91, 247, 0.5)',
+                                        bgcolor: chosenTab === page && 'rgb(27, 91, 247, 0.7)',
                                     }}
                                 >
                                     {page}
