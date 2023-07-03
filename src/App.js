@@ -12,6 +12,9 @@ function App() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        backgroundColor: '#e8e8e8',
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
       }}
     >
       <Navbar />
