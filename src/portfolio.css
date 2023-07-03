@@ -1,41 +1,78 @@
-.hoverLinkH3El {
+.hoverTitle {
     position: absolute;
     font-weight: bold;
-    padding: 0.5rem;
+    text-shadow: #88039c;
 }
 
-.hoverLinkH3ElLg {
+.hoverTitleLg {
     font-size: calc(25px + (46 - 25) * ((100vw - 300px) / (1600 - 300)));
-    top: 4rem;
-    left: 5rem;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 
-.hoverLinkH3ElMd {
+.hoverTitleMd {
     font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300)));
-    top: 3rem;
-    left: 4rem;
+    top: 0.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+
 }
 
-.hoverLinkH3ElSm {
-    font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
-    top: 2rem;
-    left: 3rem;
+.hoverTitleSm {
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    top: .25rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 }
 
-.gitHubAEl {
-    margin-left: 3rem;
-}
-
-.hoverLinkAEl {
+.hoverLink {
     text-decoration: none;
+    color: #2756f3;
+    background-color: white;
+    border-style: solid;
+    border-image: linear-gradient(to bottom right, #426eff, #e95cff) 1;
+    text-shadow: #88039c;
 }
 
-.hoverLinkAEl, .gitHubAEl {
+.hoverLinkLg {
+    padding: 1rem;
+    border-width: 0.5rem;
+}
+
+.hoverLinkMd {
+    padding: 0.7rem;
+    border-width: 0.4rem;
+}
+
+.hoverLinkSm {
+    padding: 0.5rem;
+    border-width: 0.3rem;
+}
+
+.hoverLink:hover {
+    color: #4681f7;
+}
+
+.gitHubLink {
+    margin-left: 3rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
     color: black;
 }
 
-.hoverLinkAEl:hover, .gitHubAEl:hover {
-    color: #426eff;
+.gitHubLink:hover {
+    color: rgb(103, 98, 98);
 }
 
 .gridItem {
@@ -55,9 +92,34 @@
 
 .coverUpDiv {
     position: absolute;
-    top: 0;
-    width: 95%;
+    top: 0.5rem;
+    width: 97%;
     height: 95%;
-    background-color: rgba(250,250,250,0.5);
+    background-color: rgba(250,250,250,0.8);
     box-shadow: -5px 5px 15px 15px rgba(250,250,250,0.5);
+}
+
+.linkIcon::before {
+    display: inline-block;
+    content: '';
+    background: url(../public/link.png) no-repeat;
+    margin-right: 0.5rem;
+}
+
+.linkIconLg::before {
+    background-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.linkIconMd::before {
+    background-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.linkIconSm::before {
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
 }
