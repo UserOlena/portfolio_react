@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, } from '@material-ui/core';
 import { Button, List, ListItem, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import '../assets/resume/Olena_Pashchenko.docx';
+import '../../assets/resume/Olena_Pashchenko.docx';
 
 export function Resume() {
     return (

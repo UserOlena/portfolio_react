@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { Typography } from '@mui/material';
+import { avatar } from '../../assets/img'; 
 
 export function AboutMe() {
   return (
@@ -8,7 +9,6 @@ export function AboutMe() {
       style={{
         position: 'relative',
         padding: '2rem 6rem',
-        // backgroundColor: '#ffffff',
         // backgroundImage: 'url(./bg.svg)',
         // backgroundAttachment: 'fixed',
         // backgroundSize: 'cover',
@@ -16,7 +16,7 @@ export function AboutMe() {
     >
       <Avatar
         alt="Olena Pashchenko avatar"
-        src="./avatar.jpg"
+        src={avatar}
         sx={{
           width: '10rem',
           height: '10rem',
@@ -24,30 +24,7 @@ export function AboutMe() {
           margin: '0 2rem 2rem 0',
         }}
       />
-      {/* <img
-            //src="./avatar1.jpg"
-
-            //background-repeat: no-repeat
-          style={{
-            backgroundImage: 'url(./avatar1.jpg)',
-            //width: '100%',
-            //height: '100%',
-            //backgroundSize: 'contain',
-            objectFit: 'cover',
-            width: '10rem',
-            height: '10rem',
-            borderRadius: '100px',
-            float: 'left',
-          }}
-        >
-        </img> */}
-      <Typography
-        // sx={{
-        //   background: 'linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05))',
-        //   //backgroundColor: '#ffffff',
-        //   boxShadow: '0px 0px 15px white',
-        // }}
-      >
+      <Typography>
         Greetings!
         <br /><br />I am Olena, a highly motivated and detail-oriented professional with a background in Quality Assurance Engineering within the banking industry. Recently completed a rigorous software development boot camp at UC Berkeley with an outstanding A+ total grade, equipping me with comprehensive skills in full-stack software development.
         <br /><br />Throughout my tenure as a QA Engineer, I consistently demonstrated a keen eye for identifying and resolving intricate software defects, ensuring the delivery of robust and error-free applications. Collaborating closely with cross-functional teams, I gained valuable experience in the software development lifecycle, refining my ability to create efficient test plans and execute rigorous test cases.

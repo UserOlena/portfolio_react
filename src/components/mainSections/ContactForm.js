@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Grid, Box } from "@mui/material";
+import { contactMe, } from '../../assets/img';
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -56,7 +57,7 @@ export function ContactForm() {
                 <Grid item xs={12} md={6}>
                   <Box sx={{ display: "flex", justifyContent: "center", }}>
                     <img
-                      src="./contact_me.png"
+                      src={contactMe}
                       alt="Contact"
                       style={{ maxWidth: "90%" }}
                     />
