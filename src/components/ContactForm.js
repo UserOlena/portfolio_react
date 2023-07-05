@@ -3,42 +3,39 @@ import { TextField, Button, Typography, Grid, Box } from "@mui/material";
 
 export function ContactForm() {
   const [name, setName] = useState("");
-  const [isValidName, setIsValidName] = useState(true);
+  const [isEmptyName, setIsEmptyName] = useState(false);
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isEmptyEmail, setIsEmptyEmail] = useState(false);
   const [message, setMessage] = useState("");
-  const [isValidMessage, setIsValidMessage] = useState(true);
+  const [isEmptyMessage, setIsEmptyMessage] = useState(false);
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function handleSubmit(e) {
     e.preventDefault();
+    validateEmail();
     // to be added when back end is implemented
   };
-  
-    function validateName(e) {
-      if (e.target.value.trim().length < 2 ) {
-        setIsValidName(false);
-      } else {
-        setIsValidName(true);
-      }
-    };
 
-  function validateEmail(e) {
-    if (emailRegex.test(e.target.value.trim().toLowerCase())) {
+  function validateEmail() {
+    if (emailRegex.test(email)) {
+      console.log(email)
       setIsValidEmail(true);
     } else {
+      console.log(email)
       setIsValidEmail(false);
+      return;
     }
   };
 
-  function validateMessage(e) {
-    if (e.target.value.trim().length < 10 ) {
-      setIsValidMessage(false);
+  function verifyIfInputEmpty(input, setState) {
+    if (input.length === 0) {
+      setState(true);
     } else {
-      setIsValidMessage(true);
+      setState(false);
     }
-  };
+  }
 
   return (
     <Box sx={{ height: "100vh" }}>
@@ -72,11 +69,11 @@ export function ContactForm() {
                     value={name}
                     margin="normal"
                     required
-                    error={!isValidName}
-                    helperText={!isValidName ? 'Name must be of 2 or more characters.' : null}
+                    error={isEmptyName}
+                    helperText={isEmptyName ? 'Name field is required' : null}
                     onChange={(e) => setName( e.target.value.trim() )}
-                    onBlur={(e) => validateName(e)}
-                    onFocus={() => setIsValidName(true)}
+                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyName)}
+                    onFocus={() => setIsEmptyName(false)}
                   />
                   <TextField
                     fullWidth
@@ -84,12 +81,20 @@ export function ContactForm() {
                     value={email}
                     margin="normal"
                     required
-                    error={!isValidEmail}
-                    helperText={!isValidEmail ? 'Kindly provide a legitimate email address.' : null}
+                    error={isEmptyEmail || !isValidEmail}
+                    helperText={isEmptyEmail ? 'Email field is required' : null}
                     onChange={(e) => setEmail( e.target.value.trim().toLowerCase() )}
-                    onBlur={(e) => validateEmail(e)}
-                    onFocus={() => setIsValidEmail(true)}
+                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyEmail)}
+                    onFocus={() => setIsEmptyEmail(false)}
                   />
+                    {
+                      !isValidEmail &&
+                      <p
+                        className='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained Mui-required css-1wc848c-MuiFormHelperText-root'
+                      >
+                        Kindly provide a legitimate email address.
+                      </p>
+                    }
                   <TextField
                     fullWidth
                     label="Message"
@@ -98,16 +103,17 @@ export function ContactForm() {
                     required
                     multiline
                     rows={4}
-                    error={!isValidMessage}
-                    helperText={!isValidMessage ? 'Message must be of 10 or more characters.' : null}
+                    error={isEmptyMessage}
+                    helperText={isEmptyMessage ? 'Message field is required' : null}
                     onChange={(e) => setMessage( e.target.value.trim() )}
-                    onBlur={(e) => validateMessage(e)}
-                    onFocus={() => setIsValidMessage(true)}
+                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyMessage)}
+                    onFocus={() => setIsEmptyMessage(false)}
                   />
                   <Button
                     variant="contained"
                     type="submit"
                     sx={{ mt: 2 }}
+                    onClick={(e) => handleSubmit(e)}
                   >
                     Submit
                   </Button>
