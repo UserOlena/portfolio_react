@@ -102,7 +102,7 @@
 .linkIcon::before {
     display: inline-block;
     content: '';
-    background: url(../public/link.png) no-repeat;
+    background: url(../../assets/img/portfolio/link.png) no-repeat;
     margin-right: 0.5rem;
 }
 

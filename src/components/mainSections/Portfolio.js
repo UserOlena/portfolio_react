@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, } from '@material-ui/core';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import '../portfolio.css';
+import '../../assets/css/portfolio.css';
 import { 
   wanderList,
   globalWeatherForecat,
@@ -9,7 +9,7 @@ import {
   codingQuiz,
   passwordGenerator,
   portfolioReact,
-} from '../assets/img';
+} from '../../assets/img';
 
 export function Portfolio() {
   const [hover, setHover] = useState(false);

@@ -17,6 +17,10 @@ import {
     Resume,
 } from '../components';
 
+import {
+    navBarBg,
+} from '../assets/img';
+
 export function Navbar() {
     const pages = ['About Me', 'Portfolio', 'Contact', 'Resume'];
     const [chosenTab, setChosetTab] = useState('About Me');
@@ -56,7 +60,7 @@ export function Navbar() {
                 position="static"
                 sx={{
                     backgroundColor: '#ffffff',
-                    backgroundImage: 'url(./navbar_bg_1.svg)',
+                    backgroundImage: 'url(' + navBarBg + ')',
                     zIndex: 1,
                     position: 'sticky',
                     top: 0,
