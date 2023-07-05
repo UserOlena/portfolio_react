@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { Grid, } from '@material-ui/core';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import '../portfolio.css'
+import '../portfolio.css';
+import { 
+  wanderList,
+  globalWeatherForecat,
+  portfolio,
+  codingQuiz,
+  passwordGenerator,
+  portfolioReact,
+} from '../assets/img';
 
 export function Portfolio() {
   const [hover, setHover] = useState(false);
@@ -35,7 +43,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 1)}
-          src='./wander_list.png'
+          src={wanderList}
           alt='Wander List'
           className='img'
           style={{
@@ -80,7 +88,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 2)}
-          src='./global_weather_forecast.png'
+          src={globalWeatherForecat}
           alt='Global Weather Forecast'
           className='img'
         />
@@ -119,7 +127,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 3)}
-          src='./portfolio.png'
+          src={portfolio}
           alt='Portfolio'
           className='img'
         />
@@ -161,7 +169,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 4)}
-          src='./coding_quiz.png'
+          src={codingQuiz}
           alt='Coding quiz'
           className='img'
         />
@@ -203,7 +211,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 5)}
-          src='./password_generator.png'
+          src={passwordGenerator}
           alt='Wander List'
           className='img'
         />
@@ -242,7 +250,7 @@ export function Portfolio() {
       >
         <img
           onMouseEnter={(e) => onHover(e, 6)}
-          src='./portfolio_react.png'
+          src={portfolioReact}
           alt='Portfolio React.js'
           className='img'
         />
