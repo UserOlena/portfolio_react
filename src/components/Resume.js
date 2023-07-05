@@ -27,9 +27,10 @@ export function Resume() {
                 </Button>
             </Grid>
             {
-                experience.map(({ jobTitle, duration, organization, skills }) => {
+                experience.map(({ jobTitle, duration, organization, skills }, index) => {
                     return (
                         <Grid
+                        key={index}
                             item
                             xs={10}
                         >
@@ -66,9 +67,10 @@ export function Resume() {
                                         marginLeft: '3rem',
                                     }}
                                 >
-                                    {skills.map(element => {
+                                    {skills.map((element, index) => {
                                         return (
                                             <ListItem
+                                            key={index}
                                                 sx={{
                                                     listStyleType: 'disc',
                                                     display: 'list-item',
