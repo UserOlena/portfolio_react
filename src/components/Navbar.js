@@ -57,10 +57,9 @@ export function Navbar() {
                 sx={{
                     backgroundColor: '#ffffff',
                     backgroundImage: 'url(./navbar_bg_1.svg)',
-                    //backgroundAttachment: 'fixed',
-                    //backgroundSize: 'cover',
-                    //backgroundRepeat: 'repeat'
                     zIndex: 1,
+                    position: 'sticky',
+                    top: 0,
                 }}
             >
                 <Container maxWidth="xl">
@@ -167,4 +166,3 @@ export function Navbar() {
 }
 
 export default Navbar;
-// chosenTab === 'Contact' ? '#f2f2f2' :
