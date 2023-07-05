@@ -14,6 +14,7 @@ import {
     AboutMe,
     Portfolio,
     ContactForm,
+    Resume,
 } from '../components';
 
 export function Navbar() {
@@ -34,6 +35,7 @@ export function Navbar() {
             case 'About Me': return <AboutMe />;
             case 'Portfolio': return <Portfolio />;
             case 'Contact': return <ContactForm />;
+            case 'Resume': return <Resume />;
         }
     }
 

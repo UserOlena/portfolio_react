@@ -3,3 +3,4 @@ export * from './Footer';
 export * from './AboutMe';
 export * from './Portfolio';
 export * from './ContactForm';
+export * from './Resume';
