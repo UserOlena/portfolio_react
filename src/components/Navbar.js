@@ -157,7 +157,7 @@ export function Navbar() {
                 style={{
                     width: '100%',
                     padding: '2rem',
-                    backgroundColor: '#e8e8e8',
+                    backgroundColor: chosenTab === 'Contact' ? '#f2f2f2' : '#e8e8e8',
                 }}
             >
                 {renderChosenSection()}
@@ -167,3 +167,4 @@ export function Navbar() {
 }
 
 export default Navbar;
+// chosenTab === 'Contact' ? '#f2f2f2' :
