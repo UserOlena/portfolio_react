@@ -9,17 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-
-import {
-    AboutMe,
-    Portfolio,
-    ContactForm,
-    Resume,
-} from '../components';
-
-import {
-    navBarBg,
-} from '../assets/img';
+import { Navigation } from '../components';
+import { navBarBg } from '../assets/img';
 
 export function Navbar() {
     const pages = ['About Me', 'Portfolio', 'Contact', 'Resume'];
@@ -33,20 +24,6 @@ export function Navbar() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
-    function renderChosenSection() {
-        switch (chosenTab) {
-            case 'About Me': return <AboutMe />;
-            case 'Portfolio': return <Portfolio />;
-            case 'Contact': return <ContactForm />;
-            case 'Resume': return <Resume />;
-        }
-    }
-
-    function changeChosenPageValue(event) {
-        console.log(event.currentTarget.value);
-        setChosetTab(event.currentTarget.value)
-    }
 
     return (
         <div
@@ -136,7 +113,7 @@ export function Navbar() {
                                     key={page}
                                     value={page}
                                     name={page}
-                                    onClick={changeChosenPageValue}
+                                    onClick={(event) => setChosetTab(event.currentTarget.value)}
                                     sx={{
                                         my: 2,
                                         color: 'white',
@@ -159,11 +136,11 @@ export function Navbar() {
             <main
                 style={{
                     width: '100%',
-                    padding: '2rem',
+                    padding: '3%',
                     backgroundColor: chosenTab === 'Contact' ? '#f2f2f2' : '#e8e8e8',
                 }}
             >
-                {renderChosenSection()}
+                <Navigation chosenTab={chosenTab} />
             </main>
         </div>
     );
