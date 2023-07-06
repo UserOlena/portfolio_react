@@ -4,8 +4,8 @@
 }
 
 .hoverTitleLg {
-    font-size: calc(25px + (46 - 25) * ((100vw - 300px) / (1600 - 300)));
-    top: 1rem;
+    font-size: calc(7px + (60 - 7) * ((100vw - 300px) / (1600 - 300)));
+    top: 0.1em;
     left: 0;
     right: 0;
     margin: auto;
@@ -13,8 +13,8 @@
 }
 
 .hoverTitleMd {
-    font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300)));
-    top: 0.5rem;
+    font-size: calc(5px + (50 - 5) * ((100vw - 300px) / (1600 - 300)));
+    top: 0.1em;
     left: 0;
     right: 0;
     margin: auto;
@@ -23,8 +23,8 @@
 }
 
 .hoverTitleSm {
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    top: .25rem;
+    font-size: calc(2px + (40 - 2) * ((100vw - 300px) / (1600 - 300)));
+    top: .03em;
     left: 0;
     right: 0;
     margin: auto;
@@ -41,18 +41,18 @@
 }
 
 .hoverLinkLg {
-    padding: 1rem;
-    border-width: 0.5rem;
+    padding: 0.3em;
+    border-width: 0.12em;
 }
 
 .hoverLinkMd {
-    padding: 0.7rem;
-    border-width: 0.4rem;
+    padding: 0.2em;
+    border-width: 0.1em;
 }
 
 .hoverLinkSm {
-    padding: 0.5rem;
-    border-width: 0.3rem;
+    padding: 0.18em;
+    border-width: 0.08em;
 }
 
 .hoverLink:hover {
@@ -60,9 +60,8 @@
 }
 
 .gitHubLink {
-    margin-left: 3rem;
     position: absolute;
-    bottom: 1rem;
+    bottom: 5%;
     left: 0;
     right: 0;
     text-align: center;
@@ -80,7 +79,7 @@
 
 .img {
     width: 100%;
-    padding: 1rem;
+    padding: 4%;
     background-color: #ffff;
     box-shadow: 10px 8px 5px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
 }
@@ -91,7 +90,7 @@
 
 .coverUpDiv {
     position: absolute;
-    top: 0.5rem;
+    top: 0.5em;
     width: 97%;
     height: 95%;
     background-color: rgba(250,250,250,0.8);
@@ -102,27 +101,27 @@
     display: inline-block;
     content: '';
     background: url(../../assets/img/portfolio/link.png) no-repeat;
-    margin-right: 0.5rem;
+    margin-right: 0.3em;
 }
 
 .linkIconLg::before {
-    background-size: 2rem;
-    height: 2rem;
-    width: 2rem;
+    background-size: 0.8em;
+    height: 0.8em;
+    width: 0.8em;
 }
 
 .linkIconMd::before {
-    background-size: 1.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    background-size: 0.8em;
+    height: 0.8em;
+    width: 0.8em;
 }
 
 .linkIconSm::before {
-    background-size: 1rem;
-    height: 1rem;
-    width: 1rem;
+    background-size: 0.8em;
+    height: 0.8em;
+    width: 0.8em;
 }
 
 .overlap {
-    margin-left: 5rem;
+    margin-left: 16%;
 }
