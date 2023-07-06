@@ -1,22 +1,37 @@
 import React, { useState } from 'react';
-import { Grid, makeStyles} from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { useMediaQuery } from '@mui/material';
 import '../assets/css/portfolio.css';
 
 const useStyles = makeStyles((theme) => ({
-    mr: {
-      marginRight: '4rem',
+    pushLeft: {
+        marginRight: '4rem',
+        [theme.breakpoints.down('sm')]: {
+            marginRight: 0,
+        },
     },
-    ml: {
-      marginLeft: '4rem',
+
+    pushRight: {
+        marginLeft: '4rem',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 0,
+        },
     },
-    em: {
-        padding: '1em'
+
+    overlap: {
+        marginLeft: '16%',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 0,
+        },
     }
+
 }));
 
 export function Project(props) {
     const classes = useStyles();
+    const matchesMax959 = useMediaQuery('(max-width:959px)');
+    const matchesMin960 = useMediaQuery('(min-width:960px)');
 
     const [hover, setHover] = useState(-1);
 
@@ -37,9 +52,9 @@ export function Project(props) {
     console.log(':: main hover is ' + hover)
 
     return (
-        <Grid 
+        <Grid
             item
-            xs={
+            md={
                 props.imgSize === 'lg' && 6 ||
                 props.imgSize === 'md' && 5 ||
                 props.imgSize === 'sm' && 4
@@ -47,35 +62,66 @@ export function Project(props) {
             className={`
                 gridItem 
                 ${hover == props.value && props.isOverlap && 'zIndex1'} 
-                ${props.isPushLeft ? classes.mr : ''}
-                ${props.imgSize === 'sm' ? classes.ml : ''}
+                ${props.isPushLeft ? classes.pushLeft : ''}
+                ${props.imgSize === 'sm' ? classes.pushRight : ''}
             `}
+            style={{
+                marginTop: matchesMax959 ? '3%' : ''
+            }}
         >
+            {
+                matchesMax959 &&
+                <>
+                    <h3
+                        className='hoverTitle hoverTitleLg'
+                    >
+                        <a
+                            onMouseEnter={(e) => onHover(e)}
+                            href={props.deployedAppUrl}
+                            value={props.value}
+                            target='_blank'
+                            className='
+                                hoverLink 
+                                linkIcon 
+                                hoverLinkLg
+                                linkIconLg'
+                        >
+                            {props.projectTitle}
+                        </a>
+                    </h3>
+                    <a
+                        href={props.gitHubUrl}
+                        target='_blank'
+                        className='gitHubLink'
+                    >
+                        <GitHubIcon fontSize='large' />
+                    </a>
+                </>
+            }
             <img
                 onMouseEnter={(e) => onHover(e)}
                 src={props.imgSrc}
                 alt={props.imgAlt}
-                className={`img ${props.isOverlap ? 'overlap' : ''}`}
+                className={`img ${props.isOverlap ? classes.overlap : ''}`}
                 value={props.value}
             />
             {
-                hover == props.value &&
+                matchesMin960 && hover == props.value &&
                 <div
                     onMouseEnter={(e) => onHover(e)}
                     onMouseLeave={(e) => onHoverOver(e)}
-                    className={`coverUpDiv ${props.isOverlap ? 'overlap' : ''}`}
+                    className={`coverUpDiv ${props.isOverlap ? classes.overlap : ''}`}
                     value={props.value}
                 >
                     <h3
                         className={`
                             hoverTitle 
-                            ${
-                                props.imgSize === 'lg' && 'hoverTitleLg' ||
-                                props.imgSize === 'md' && 'hoverTitleMd' ||
-                                props.imgSize === 'sm' && 'hoverTitleSm'
+                            ${props.imgSize === 'lg' && 'hoverTitleLg' ||
+                            props.imgSize === 'md' && 'hoverTitleMd' ||
+                            props.imgSize === 'sm' && 'hoverTitleSm'
                             }
                         `}
-                        >
+                    >
                         <a
                             onMouseEnter={(e) => onHover(e)}
                             href={props.deployedAppUrl}
@@ -84,10 +130,9 @@ export function Project(props) {
                             className={`
                                 hoverLink 
                                 linkIcon 
-                                ${
-                                    props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
-                                    props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
-                                    props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
+                                ${props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
+                                props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
+                                props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
                                 }
                             `}
                         >
