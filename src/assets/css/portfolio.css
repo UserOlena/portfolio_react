@@ -1,7 +1,6 @@
 .hoverTitle {
     position: absolute;
     font-weight: bold;
-    text-shadow: #88039c;
 }
 
 .hoverTitleLg {
@@ -38,7 +37,7 @@
     background-color: white;
     border-style: solid;
     border-image: linear-gradient(to bottom right, #426eff, #e95cff) 1;
-    text-shadow: #88039c;
+    text-shadow: 1px 1px 2px #88039c;
 }
 
 .hoverLinkLg {
@@ -122,4 +121,8 @@
     background-size: 1rem;
     height: 1rem;
     width: 1rem;
+}
+
+.overlap {
+    margin-left: 5rem;
 }
