@@ -36,7 +36,6 @@ export function Portfolio() {
             imgSrc,
             imgAlt,
             isOverlap,
-            isGitHubIconSizeLarge,
             imgSize,
             isPushLeft,
           }, 
@@ -50,7 +49,6 @@ export function Portfolio() {
               gitHubUrl={gitHubUrl}
               imgAlt={imgAlt}
               isOverlap={isOverlap}
-              isGitHubIconSizeLarge={isGitHubIconSizeLarge}
               imgSize={imgSize}
               key={index}
               value={index}
@@ -73,7 +71,6 @@ const projects = [
     imgSrc: wanderList,
     imgAlt: 'Wander List',
     isOverlap: true,
-    isGitHubIconSizeLarge: true,
     imgSize: 'lg',
   },
   {
@@ -82,7 +79,6 @@ const projects = [
     gitHubUrl: 'https://github.com/UserOlena/global-weather-forecast',
     imgSrc: globalWeatherForecat,
     imgAlt: 'Global Weather Forecast',
-    isGitHubIconSizeLarge: true,
     imgSize: 'md',
   },
   {
@@ -91,7 +87,6 @@ const projects = [
     gitHubUrl: 'https://github.com/UserOlena/portfolio',
     imgSrc: portfolio,
     imgAlt: 'Portfolio',
-    isGitHubIconSizeLarge: true,
     imgSize: 'md',
   },
   {
@@ -100,7 +95,6 @@ const projects = [
     gitHubUrl: 'https://github.com/UserOlena/coding_quiz',
     imgSrc: codingQuiz,
     imgAlt: 'Coding quiz',
-    isGitHubIconSizeLarge: true,
     imgSize: 'md',
     isPushLeft: true,
   },
@@ -118,7 +112,6 @@ const projects = [
     gitHubUrl: 'https://github.com/UserOlena/portfolio_react',
     imgSrc: portfolioReact,
     imgAlt: 'image of Portfolio application built with React.js',
-    isGitHubIconSizeLarge: true,
     imgSize: 'lg',
   },
 ];

@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     ml: {
       marginLeft: '4rem',
     },
+    em: {
+        padding: '1em'
+    }
 }));
 
 export function Project(props) {
@@ -96,9 +99,7 @@ export function Project(props) {
                         target='_blank'
                         className='gitHubLink'
                     >
-                        <GitHubIcon
-                            fontSize={props.isGitHubIconSizeLarge ? 'large' : 'medium'}
-                        />
+                        <GitHubIcon fontSize='large' />
                     </a>
                 </div>
             }
