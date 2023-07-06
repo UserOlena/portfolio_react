@@ -14,16 +14,24 @@ import { navBarBg } from '../assets/img';
 
 export function Navbar() {
     const pages = ['About Me', 'Portfolio', 'Contact', 'Resume'];
-    const [chosenTab, setChosetTab] = useState('About Me');
+    const [chosenTab, setChosenTab] = useState('About Me');
     const [anchorElNav, setAnchorElNav] = useState(null);
 
-    const handleOpenNavMenu = (event) => {
+    function handleOpenNavMenu(event) {
         setAnchorElNav(event.currentTarget);
     };
-
-    const handleCloseNavMenu = () => {
+    
+    function handleCloseNavMenu() {
         setAnchorElNav(null);
     };
+
+    function handleNavMenuClick(page) {
+        setChosenTab(page);
+        handleCloseNavMenu();
+    }
+
+    console.log('anchor ' + anchorElNav)
+    console.log('chosen tab main ' + chosenTab)
 
     return (
         <div
@@ -58,6 +66,8 @@ export function Navbar() {
                                 letterSpacing: '.2rem',
                                 color: 'inherit',
                                 textDecoration: 'none',
+                                textShadow: '2px 1px 1px #3b0c34',
+                                fontSize: 'calc(10px + (26 - 10) * ((100vw - 300px) / (1600 - 300)))',
                             }}
                         >
                             Olena Pashchenko
@@ -96,8 +106,15 @@ export function Navbar() {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
+                                    <MenuItem 
+                                        key={page} 
+                                        value={page}
+                                        name={page}
+                                        onClick={() => handleNavMenuClick(page)}
+                                    >
+                                        <Typography textAlign="center" >
+                                            {page}
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -105,21 +122,23 @@ export function Navbar() {
                         <Box sx={{
                             flexGrow: 1,
                             display: { xs: 'none', md: 'flex' },
-                            marginLeft: '16rem'
+                            marginLeft: '20%'
                         }}
                         >
-                            {pages.map((page, index) => (
+                            {pages.map((page) => (
                                 <Button
                                     key={page}
                                     value={page}
                                     name={page}
-                                    onClick={(event) => setChosetTab(event.currentTarget.value)}
+                                    onClick={(event) => setChosenTab(event.currentTarget.value)}
                                     sx={{
                                         my: 2,
                                         color: 'white',
                                         display: 'block',
-                                        marginLeft: '3rem',
-                                        borderRadius: '0.5rem',
+                                        marginLeft: '8%',
+                                        borderRadius: '0.5em',
+                                        textShadow: '1px 1px 1px #3b0c34',
+                                        fontSize: 'calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)))',
                                         '&:hover': {
                                             background: 'rgb(27, 91, 247, 0.5)',
                                         },
