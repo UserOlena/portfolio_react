@@ -6,7 +6,7 @@
 --- 
 The `Portfolio` was created as part of Berkeley Coding Bootcamp Challenge 20 to fulfill the requirements of a React templating engine.
 - Deployed application can be accessed by following this [link](https://userolena.github.io/portfolio_react/).
-- The walk-through video showcasing the operation of the Portfolio application can be located in the [Walk-through Video](#walk-through-video) section. Alternatively, you can access the video through cloud storage by following this  [link]().
+- The walk-through video showcasing the operation of the Portfolio application can be located in the [Walk-through Video](#walk-through-video) section. Alternatively, you can access the video through cloud storage by following this  [link](https://1drv.ms/v/s!Ak2qWe8ZT6ny3XMui_DBRn8dtu-0?e=8skTbq).
 
 ---
 ## Table of Contents
@@ -28,8 +28,9 @@ The `Portfolio` was created as part of Berkeley Coding Bootcamp Challenge 20 to 
 The purpose of the Portfolio web app is to provide individuals with a platform to effectively showcase their skills, experience, and projects to potential employers. It aims to create a professional online presence that highlights their strengths and capabilities, helping them stand out in the competitive job market. By organizing and presenting relevant information in an attractive and user-friendly manner, the portfolio web app empowers individuals to make a compelling case for their suitability and expertise to prospective employers. The development of the application was done accordingly to [user story](#user-story) and [acceptance criteria](#acceptance-criteria). 
 
 ---
-## Walk-through Video 
+## Walkthrough Video 
 
+https://github.com/UserOlena/portfolio_react/assets/122197592/44ff0242-1ae0-41f8-84b3-7397aff92e8c
 
 ---
 ## Technologies Used
