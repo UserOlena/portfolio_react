@@ -9,44 +9,29 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-
-import {
-    AboutMe,
-    Portfolio,
-    ContactForm,
-    Resume,
-} from '../components';
-
-import {
-    navBarBg,
-} from '../assets/img';
+import { Navigation } from '../components';
+import { navBarBg } from '../assets/img';
 
 export function Navbar() {
     const pages = ['About Me', 'Portfolio', 'Contact', 'Resume'];
-    const [chosenTab, setChosetTab] = useState('About Me');
+    const [chosenTab, setChosenTab] = useState('About Me');
     const [anchorElNav, setAnchorElNav] = useState(null);
 
-    const handleOpenNavMenu = (event) => {
+    function handleOpenNavMenu(event) {
         setAnchorElNav(event.currentTarget);
     };
-
-    const handleCloseNavMenu = () => {
+    
+    function handleCloseNavMenu() {
         setAnchorElNav(null);
     };
 
-    function renderChosenSection() {
-        switch (chosenTab) {
-            case 'About Me': return <AboutMe />;
-            case 'Portfolio': return <Portfolio />;
-            case 'Contact': return <ContactForm />;
-            case 'Resume': return <Resume />;
-        }
+    function handleNavMenuClick(page) {
+        setChosenTab(page);
+        handleCloseNavMenu();
     }
 
-    function changeChosenPageValue(event) {
-        console.log(event.currentTarget.value);
-        setChosetTab(event.currentTarget.value)
-    }
+    console.log('anchor ' + anchorElNav)
+    console.log('chosen tab main ' + chosenTab)
 
     return (
         <div
@@ -81,6 +66,8 @@ export function Navbar() {
                                 letterSpacing: '.2rem',
                                 color: 'inherit',
                                 textDecoration: 'none',
+                                textShadow: '2px 1px 1px #3b0c34',
+                                fontSize: 'calc(10px + (26 - 10) * ((100vw - 300px) / (1600 - 300)))',
                             }}
                         >
                             Olena Pashchenko
@@ -119,8 +106,15 @@ export function Navbar() {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
+                                    <MenuItem 
+                                        key={page} 
+                                        value={page}
+                                        name={page}
+                                        onClick={() => handleNavMenuClick(page)}
+                                    >
+                                        <Typography textAlign="center" >
+                                            {page}
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -128,21 +122,23 @@ export function Navbar() {
                         <Box sx={{
                             flexGrow: 1,
                             display: { xs: 'none', md: 'flex' },
-                            marginLeft: '16rem'
+                            marginLeft: '20%'
                         }}
                         >
-                            {pages.map((page, index) => (
+                            {pages.map((page) => (
                                 <Button
                                     key={page}
                                     value={page}
                                     name={page}
-                                    onClick={changeChosenPageValue}
+                                    onClick={(event) => setChosenTab(event.currentTarget.value)}
                                     sx={{
                                         my: 2,
                                         color: 'white',
                                         display: 'block',
-                                        marginLeft: '3rem',
-                                        borderRadius: '0.5rem',
+                                        marginLeft: '8%',
+                                        borderRadius: '0.5em',
+                                        textShadow: '1px 1px 1px #3b0c34',
+                                        fontSize: 'calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)))',
                                         '&:hover': {
                                             background: 'rgb(27, 91, 247, 0.5)',
                                         },
@@ -159,11 +155,11 @@ export function Navbar() {
             <main
                 style={{
                     width: '100%',
-                    padding: '2rem',
+                    padding: '3%',
                     backgroundColor: chosenTab === 'Contact' ? '#f2f2f2' : '#e8e8e8',
                 }}
             >
-                {renderChosenSection()}
+                <Navigation chosenTab={chosenTab} />
             </main>
         </div>
     );

@@ -17,7 +17,10 @@ export function Portfolio() {
 
   return (
     <Grid
-      container spacing={2}
+      container 
+      spacing={3}
+      // spacing={{ xs: 2, md: 3 }}
+      // rowSpacing={{ sm: 4, md: 4, }}
       alignItems='center'
       justifyContent='center'
       margin='1% auto'
@@ -26,6 +29,7 @@ export function Portfolio() {
         padding: '2rem',
         backgroundColor: '#e8e8e8',
       }}
+      className='portfolioGridContainer'
     >
       {
         projects.map( 
