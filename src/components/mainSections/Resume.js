@@ -3,7 +3,7 @@ import { Grid, } from '@material-ui/core';
 import { Button, List, ListItem, Typography } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import '../../assets/resume/Olena_Pashchenko.docx';
+import resume from  '../../assets/resume/Olena_Pashchenko.docx';
 
 export function Resume() {
     const matchesMax959 = useMediaQuery('(max-width:959px)');
@@ -22,9 +22,9 @@ export function Resume() {
                 <Button
                     variant='contained'
                     color='secondary'
-                    href='./Olena_Pashchenko.docx'
                     startIcon={<DownloadIcon />}
-                    download
+                    href={resume}
+                    download='./Olena_Pashchenko.docx'
                 >
                     resume
                 </Button>
