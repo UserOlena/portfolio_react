@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import { Typography } from '@mui/material';
 import { avatar } from '../../assets/img'; 
 
 export function AboutMe() {
+  
   return (
     <section
       style={{
         position: 'relative',
-        padding: '2rem 6rem',
+        padding: '3% 9%',
         // backgroundImage: 'url(./bg.svg)',
         // backgroundAttachment: 'fixed',
         // backgroundSize: 'cover',
