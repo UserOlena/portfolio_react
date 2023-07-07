@@ -24,7 +24,16 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
         },
-    }
+    },
+
+    projTitle: {
+        textShadow: '1px 1px 5px #88039c',
+        fontSize: 'calc(7px + (60 - 7) * ((100vw - 300px) / (1600 - 300)))',
+        [theme.breakpoints.down('sm')]: {
+            textShadow: '1px 1px 1px black',
+            fontSize: 'calc(15px + (80 - 15) * ((100vw - 300px) / (1600 - 300)))',
+        },
+    },
 
 }));
 
@@ -80,11 +89,16 @@ export function Project(props) {
                             href={props.deployedAppUrl}
                             value={props.value}
                             target='_blank'
-                            className='
+                            className={`
                                 hoverLink 
                                 linkIcon 
                                 hoverLinkLg
-                                linkIconLg'
+                                linkIconLg 
+                                ${classes.projTitle}`
+                            }
+                            // style={{
+                            //     textShadow: matchesMax959 ? '1px 1px 1px #88039c' : '1px 1px 2px #88039c'
+                            // }}
                         >
                             {props.projectTitle}
                         </a>
