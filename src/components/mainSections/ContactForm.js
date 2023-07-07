@@ -21,10 +21,10 @@ export function ContactForm() {
 
   function validateEmail() {
     if (emailRegex.test(email)) {
-      console.log(email)
+      console.log('email ' +email)
       setIsValidEmail(true);
     } else {
-      console.log(email)
+      console.log('email ' +email)
       setIsValidEmail(false);
       return;
     }
@@ -35,6 +35,15 @@ export function ContactForm() {
       setState(true);
     } else {
       setState(false);
+    }
+  }
+
+  function handleOnFocusEmail() {
+    if (isEmptyEmail) {
+      setIsEmptyEmail(false)
+    }
+    if (!isValidEmail) {
+      setIsValidEmail(true)
     }
   }
 
@@ -72,8 +81,8 @@ export function ContactForm() {
                     required
                     error={isEmptyName}
                     helperText={isEmptyName ? 'Name field is required' : null}
-                    onChange={(e) => setName( e.target.value.trim() )}
-                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyName)}
+                    onChange={(e) => setName(e.target.value.trim())}
+                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyName)}
                     onFocus={() => setIsEmptyName(false)}
                   />
                   <TextField
@@ -83,19 +92,11 @@ export function ContactForm() {
                     margin="normal"
                     required
                     error={isEmptyEmail || !isValidEmail}
-                    helperText={isEmptyEmail ? 'Email field is required' : null}
-                    onChange={(e) => setEmail( e.target.value.trim().toLowerCase() )}
-                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyEmail)}
-                    onFocus={() => setIsEmptyEmail(false)}
+                    helperText={isEmptyEmail && 'Email field is required' || !isValidEmail && 'Kindly provide a legitimate email address.'}
+                    onChange={(e) => setEmail(e.target.value.trim().toLowerCase())}
+                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyEmail)}
+                    onFocus={() => handleOnFocusEmail()}
                   />
-                    {
-                      !isValidEmail &&
-                      <p
-                        className='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained Mui-required css-1wc848c-MuiFormHelperText-root'
-                      >
-                        Kindly provide a legitimate email address.
-                      </p>
-                    }
                   <TextField
                     fullWidth
                     label="Message"
@@ -106,8 +107,8 @@ export function ContactForm() {
                     rows={4}
                     error={isEmptyMessage}
                     helperText={isEmptyMessage ? 'Message field is required' : null}
-                    onChange={(e) => setMessage( e.target.value.trim() )}
-                    onBlur={(e) => verifyIfInputEmpty( e.target.value.trim(), setIsEmptyMessage)}
+                    onChange={(e) => setMessage(e.target.value.trim())}
+                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyMessage)}
                     onFocus={() => setIsEmptyMessage(false)}
                   />
                   <Button
