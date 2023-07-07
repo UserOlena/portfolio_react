@@ -1,10 +1,13 @@
 import React from 'react';
 import { Grid, } from '@material-ui/core';
 import { Button, List, ListItem, Typography } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import '../../assets/resume/Olena_Pashchenko.docx';
 
 export function Resume() {
+    const matchesMax959 = useMediaQuery('(max-width:959px)');
+    
     return (
         <Grid
             container
@@ -32,12 +35,12 @@ export function Resume() {
                         <Grid
                         key={index}
                             item
-                            xs={10}
+                            md={10}
                         >
                             <div
                                  style={{
                                     padding: '2rem 0 0 2rem',
-                                    boxShadow: '0px -15px 10px -10px rgba(66, 110, 255, 0.2)',
+                                    boxShadow: '0px -15px 10px -10px rgba(0, 0, 0, 0.2)',
                                 }}
                             >
                                 <Typography
@@ -55,7 +58,7 @@ export function Resume() {
                                 </Typography>
                                 <Typography
                                     variant='h5'
-                                    margin={'1rem 0 0 1rem'}
+                                    margin={matchesMax959 ? '1rem 0 0 0' : '1rem 0 0 1rem'}
                                     sx={{
                                         textShadow: '1px 1px 1px rgba(66, 110, 255)'
                                     }}
@@ -64,7 +67,7 @@ export function Resume() {
                                 </Typography>
                                 <List
                                     sx={{
-                                        marginLeft: '3rem',
+                                        marginLeft: matchesMax959 ? 0 : '3rem',
                                     }}
                                 >
                                     {skills.map((element, index) => {
