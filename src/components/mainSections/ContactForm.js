@@ -13,37 +13,46 @@ export function ContactForm() {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // function is called on submit button click
   function handleSubmit(e) {
     e.preventDefault();
     validateEmail();
     // to be added when back end is implemented
   };
 
+  // function validates email input
   function validateEmail() {
     if (emailRegex.test(email)) {
-      console.log('email ' +email)
-      setIsValidEmail(true);
+      return true;
     } else {
-      console.log('email ' +email)
-      setIsValidEmail(false);
-      return;
+      return false;
     }
   };
 
-  function verifyIfInputEmpty(input, setState) {
+  // validates if input is empty. if so, changing the state of that input
+  function isInputEmpty(input, state) {
     if (input.length === 0) {
-      setState(true);
-    } else {
-      setState(false);
+      state(true);
     }
   }
 
+  // on email input focus checking which error is active and changing its state to remove an error
   function handleOnFocusEmail() {
     if (isEmptyEmail) {
       setIsEmptyEmail(false)
     }
+
     if (!isValidEmail) {
       setIsValidEmail(true)
+    }
+  }
+
+  // vefifies the input value to set the appropriate state to display an error if condition is met
+  function verifyEmailInput(input, state) {
+    if (isInputEmpty(input, state)) {
+      return;
+    } else if (!validateEmail()) {
+      setIsValidEmail(false);
     }
   }
 
@@ -82,7 +91,7 @@ export function ContactForm() {
                     error={isEmptyName}
                     helperText={isEmptyName ? 'Name field is required' : null}
                     onChange={(e) => setName(e.target.value.trim())}
-                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyName)}
+                    onBlur={(e) => isInputEmpty(e.target.value.trim(), setIsEmptyName)}
                     onFocus={() => setIsEmptyName(false)}
                   />
                   <TextField
@@ -94,7 +103,7 @@ export function ContactForm() {
                     error={isEmptyEmail || !isValidEmail}
                     helperText={isEmptyEmail && 'Email field is required' || !isValidEmail && 'Kindly provide a legitimate email address.'}
                     onChange={(e) => setEmail(e.target.value.trim().toLowerCase())}
-                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyEmail)}
+                    onBlur={(e) => verifyEmailInput(e.target.value.trim(), setIsEmptyEmail)}
                     onFocus={() => handleOnFocusEmail()}
                   />
                   <TextField
@@ -108,7 +117,7 @@ export function ContactForm() {
                     error={isEmptyMessage}
                     helperText={isEmptyMessage ? 'Message field is required' : null}
                     onChange={(e) => setMessage(e.target.value.trim())}
-                    onBlur={(e) => verifyIfInputEmpty(e.target.value.trim(), setIsEmptyMessage)}
+                    onBlur={(e) => isInputEmpty(e.target.value.trim(), setIsEmptyMessage)}
                     onFocus={() => setIsEmptyMessage(false)}
                   />
                   <Button
