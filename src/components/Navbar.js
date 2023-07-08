@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -29,9 +29,6 @@ export function Navbar() {
         setChosenTab(page);
         handleCloseNavMenu();
     }
-
-    console.log('anchor ' + anchorElNav)
-    console.log('chosen tab main ' + chosenTab)
 
     return (
         <div
