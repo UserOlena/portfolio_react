@@ -88,6 +88,7 @@ These steps should guide you through the process of setting up and running the P
 ## Credits
 - [Material UI](https://mui.com/) -  JavaScript library for building user interfaces with component-based architecture.
 - [kindpng](www.kindpng.com) - Image for the "Contact" section.
+- [favicon.io](https://favicon.io/) - Custom favicon generator.
 
 ---
 ## User Story
