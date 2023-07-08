@@ -1,4 +1,4 @@
-import { React, useState} from 'react';
+import { React, useState } from 'react';
 import { Grid, makeStyles } from '@material-ui/core';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useMediaQuery } from '@mui/material';
@@ -49,12 +49,12 @@ export function Project(props) {
         if (matchesMin960) {
             const value = event.target.getAttribute('value')
             setHover(value);
-        }
+        };
     };
 
     function onHoverOver() {
         setHover(-1);
-    }
+    };
 
     return (
         <Grid
@@ -124,10 +124,9 @@ export function Project(props) {
                     <h3
                         className={`
                             hoverTitle 
-                            ${
-                                props.imgSize === 'lg' && 'hoverTitleLg' ||
-                                props.imgSize === 'md' && 'hoverTitleMd' ||
-                                props.imgSize === 'sm' && 'hoverTitleSm'
+                            ${props.imgSize === 'lg' && 'hoverTitleLg' ||
+                            props.imgSize === 'md' && 'hoverTitleMd' ||
+                            props.imgSize === 'sm' && 'hoverTitleSm'
                             }
                         `}
                     >
@@ -139,10 +138,9 @@ export function Project(props) {
                             className={`
                                 hoverLink 
                                 linkIcon 
-                                ${
-                                    props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
-                                    props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
-                                    props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
+                                ${props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
+                                props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
+                                props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
                                 }
                                 ${classes.projTitle}
                             `}
@@ -160,7 +158,7 @@ export function Project(props) {
                 </div>
             }
         </Grid>
-    )
+    );
 }
 
 export default Project;

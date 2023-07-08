@@ -3,11 +3,11 @@ import { Grid, } from '@material-ui/core';
 import { Button, List, ListItem, Typography } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import resume from  '../../assets/resume/Olena_Pashchenko.docx';
+import resume from '../../assets/resume/Olena_Pashchenko.docx';
 
 export function Resume() {
     const matchesMax959 = useMediaQuery('(max-width:959px)');
-    
+
     return (
         <Grid
             container
@@ -33,12 +33,12 @@ export function Resume() {
                 experience.map(({ jobTitle, duration, organization, skills }, index) => {
                     return (
                         <Grid
-                        key={index}
+                            key={index}
                             item
                             md={10}
                         >
                             <div
-                                 style={{
+                                style={{
                                     padding: '2rem 0 0 2rem',
                                     boxShadow: '0px -15px 10px -10px rgba(0, 0, 0, 0.2)',
                                 }}
@@ -73,7 +73,7 @@ export function Resume() {
                                     {skills.map((element, index) => {
                                         return (
                                             <ListItem
-                                            key={index}
+                                                key={index}
                                                 sx={{
                                                     listStyleType: 'disc',
                                                     display: 'list-item',

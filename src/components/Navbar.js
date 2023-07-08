@@ -20,7 +20,7 @@ export function Navbar() {
     function handleOpenNavMenu(event) {
         setAnchorElNav(event.currentTarget);
     };
-    
+
     function handleCloseNavMenu() {
         setAnchorElNav(null);
     };
@@ -28,7 +28,7 @@ export function Navbar() {
     function handleNavMenuClick(page) {
         setChosenTab(page);
         handleCloseNavMenu();
-    }
+    };
 
     return (
         <div
@@ -103,8 +103,8 @@ export function Navbar() {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem 
-                                        key={page} 
+                                    <MenuItem
+                                        key={page}
                                         value={page}
                                         name={page}
                                         onClick={() => handleNavMenuClick(page)}
