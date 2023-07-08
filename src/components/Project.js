@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React, useState} from 'react';
 import { Grid, makeStyles } from '@material-ui/core';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useMediaQuery } from '@mui/material';
@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     projTitle: {
-        textShadow: '1px 1px 5px #88039c',
-        fontSize: 'calc(7px + (60 - 7) * ((100vw - 300px) / (1600 - 300)))',
+        textShadow: '1px 1px 2px #88039c',
         [theme.breakpoints.down('sm')]: {
             textShadow: '1px 1px 1px black',
             fontSize: 'calc(15px + (80 - 15) * ((100vw - 300px) / (1600 - 300)))',
@@ -45,20 +44,17 @@ export function Project(props) {
     const [hover, setHover] = useState(-1);
 
     function onHover(event) {
-        event.preventDefault();
-        console.log(event.target)
-        const value = event.target.getAttribute('value')
-        console.log('onHover :: setting hover to ' + value)
-        setHover(value);
-        console.log('onHover :: hover is ' + hover)
+
+        // prevents changing state on hover if window size is smaller then 960px
+        if (matchesMin960) {
+            const value = event.target.getAttribute('value')
+            setHover(value);
+        }
     };
 
-    function onHoverOver(event) {
-        event.preventDefault();
+    function onHoverOver() {
         setHover(-1);
-        console.log('onHoverOver :: hover is ' + hover)
     }
-    console.log(':: main hover is ' + hover)
 
     return (
         <Grid
@@ -96,9 +92,6 @@ export function Project(props) {
                                 linkIconLg 
                                 ${classes.projTitle}`
                             }
-                            // style={{
-                            //     textShadow: matchesMax959 ? '1px 1px 1px #88039c' : '1px 1px 2px #88039c'
-                            // }}
                         >
                             {props.projectTitle}
                         </a>
@@ -114,6 +107,7 @@ export function Project(props) {
             }
             <img
                 onMouseEnter={(e) => onHover(e)}
+                onMouseLeave={(e) => onHoverOver(e)}
                 src={props.imgSrc}
                 alt={props.imgAlt}
                 className={`img ${props.isOverlap ? classes.overlap : ''}`}
@@ -130,9 +124,10 @@ export function Project(props) {
                     <h3
                         className={`
                             hoverTitle 
-                            ${props.imgSize === 'lg' && 'hoverTitleLg' ||
-                            props.imgSize === 'md' && 'hoverTitleMd' ||
-                            props.imgSize === 'sm' && 'hoverTitleSm'
+                            ${
+                                props.imgSize === 'lg' && 'hoverTitleLg' ||
+                                props.imgSize === 'md' && 'hoverTitleMd' ||
+                                props.imgSize === 'sm' && 'hoverTitleSm'
                             }
                         `}
                     >
@@ -144,10 +139,12 @@ export function Project(props) {
                             className={`
                                 hoverLink 
                                 linkIcon 
-                                ${props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
-                                props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
-                                props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
+                                ${
+                                    props.imgSize === 'lg' && 'hoverLinkLg linkIconLg' ||
+                                    props.imgSize === 'md' && 'hoverLinkMd linkIconMd' ||
+                                    props.imgSize === 'sm' && 'hoverLinkSm linkIconSm'
                                 }
+                                ${classes.projTitle}
                             `}
                         >
                             {props.projectTitle}
