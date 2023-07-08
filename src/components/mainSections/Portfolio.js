@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, } from '@material-ui/core';
-import { 
+import { Grid } from '@material-ui/core';
+import { Project } from '../../components';
+import {
   wanderList,
   globalWeatherForecat,
   portfolio,
@@ -9,18 +10,12 @@ import {
   portfolioReact,
 } from '../../assets/img';
 
-import { 
-  Project 
-} from '../../components';
-
 export function Portfolio() {
 
   return (
     <Grid
-      container 
+      container
       spacing={3}
-      // spacing={{ xs: 2, md: 3 }}
-      // rowSpacing={{ sm: 4, md: 4, }}
       alignItems='center'
       justifyContent='center'
       margin='1% auto'
@@ -32,8 +27,8 @@ export function Portfolio() {
       className='portfolioGridContainer'
     >
       {
-        projects.map( 
-          ({ 
+        projects.map(
+          ({
             projectTitle,
             deployedAppUrl,
             gitHubUrl,
@@ -42,25 +37,24 @@ export function Portfolio() {
             isOverlap,
             imgSize,
             isPushLeft,
-          }, 
-          index
+          },
+            index
           ) => {
-          return (
-            <Project 
-              projectTitle={projectTitle}
-              imgSrc={imgSrc}
-              deployedAppUrl={deployedAppUrl}
-              gitHubUrl={gitHubUrl}
-              imgAlt={imgAlt}
-              isOverlap={isOverlap}
-              imgSize={imgSize}
-              key={index}
-              value={index}
-              isPushLeft={isPushLeft}
-            />
-          )
-        }
- 
+            return (
+              <Project
+                projectTitle={projectTitle}
+                imgSrc={imgSrc}
+                deployedAppUrl={deployedAppUrl}
+                gitHubUrl={gitHubUrl}
+                imgAlt={imgAlt}
+                isOverlap={isOverlap}
+                imgSize={imgSize}
+                key={index}
+                value={index}
+                isPushLeft={isPushLeft}
+              />
+            )
+          }
         )
       }
     </Grid>

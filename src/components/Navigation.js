@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React } from 'react';
 
 import {
     AboutMe,
@@ -16,8 +16,8 @@ export function Navigation(props) {
             case 'Contact': return <ContactForm />;
             case 'Resume': return <Resume />;
         }
-    }
-    
+    };
+
     return (
         renderChosenSection(props.chosenTab)
     );

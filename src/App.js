@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Navbar,
   Footer,
@@ -8,14 +8,14 @@ function App() {
 
   return (
     <div style={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        backgroundColor: '#e8e8e8',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-      }}
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      backgroundColor: '#e8e8e8',
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+    }}
     >
       <Navbar />
       <Footer />

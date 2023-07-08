@@ -27,19 +27,19 @@ export function Footer() {
             <BottomNavigation
                 className={classes.container}
             >
-                <BottomNavigationAction 
+                <BottomNavigationAction
                     icon={<GitHubIcon fontSize='large' />}
                     className={classes.changeIconColorOnHover}
                     target='_blank'
                     href='https://github.com/UserOlena'
                 />
-                <BottomNavigationAction 
-                    icon={<LinkedInIcon fontSize='large' />} 
+                <BottomNavigationAction
+                    icon={<LinkedInIcon fontSize='large' />}
                     className={classes.changeIconColorOnHover}
                     target='_blank'
                     href='https://www.linkedin.com/in/olena-pashchenko-224b8027b/'
                 />
-                <BottomNavigationAction 
+                <BottomNavigationAction
                     icon={<TwitterIcon fontSize='large' />}
                     className={classes.changeIconColorOnHover}
                     target='_blank'
