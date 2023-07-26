@@ -26,4 +26,5 @@ export {
     linkIcon,
     navBarBg,
     contactMe,
+    learnify,
 }
