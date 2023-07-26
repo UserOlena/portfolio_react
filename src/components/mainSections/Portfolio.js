@@ -7,7 +7,7 @@ import {
   portfolio,
   codingQuiz,
   passwordGenerator,
-  portfolioReact,
+  learnify,
 } from '../../assets/img';
 
 export function Portfolio() {
@@ -105,11 +105,11 @@ const projects = [
     imgSize: 'sm',
   },
   {
-    projectTitle: 'Portfolio React',
-    deployedAppUrl: 'https://userolena.github.io/portfolio_react/',
-    gitHubUrl: 'https://github.com/UserOlena/portfolio_react',
-    imgSrc: portfolioReact,
-    imgAlt: 'image of Portfolio application built with React.js',
+    projectTitle: 'Learnify',
+    deployedAppUrl: 'https://learnify-7e031704dc94.herokuapp.com/',
+    gitHubUrl: 'https://github.com/UserOlena/Learnify',
+    imgSrc: learnify,
+    imgAlt: 'image of learning platform application built with MERN',
     imgSize: 'lg',
   },
 ];
