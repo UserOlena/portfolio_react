@@ -5,6 +5,7 @@ import portfolio from './projectImg/portfolio.png';
 import codingQuiz from './projectImg/coding_quiz.png';
 import passwordGenerator from './projectImg/password_generator.png';
 import portfolioReact from './projectImg/portfolio_react.png';
+import learnify from './projectImg/learnify.png'
 // 'about me' assets
 import avatar from './aboutMe/avatar.jpg';
 // 'portfolio' assets
