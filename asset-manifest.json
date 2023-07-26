@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio_react/static/css/main.c39a4a23.css",
-    "main.js": "/portfolio_react/static/js/main.0f4d2852.js",
+    "main.js": "/portfolio_react/static/js/main.c6d91d24.js",
     "static/media/wander_list.png": "/portfolio_react/static/media/wander_list.0acb2000c3fa09704798.png",
     "static/media/global_weather_forecast.png": "/portfolio_react/static/media/global_weather_forecast.62e10dd1a95f5d4ca50d.png",
     "static/media/password_generator.png": "/portfolio_react/static/media/password_generator.e7f091424e0f343a647a.png",
     "static/media/Olena_Pashchenko.docx": "/portfolio_react/static/media/Olena_Pashchenko.695b1742f6f60bec3752.docx",
     "static/media/avatar.jpg": "/portfolio_react/static/media/avatar.198ad668d5974c433b74.jpg",
+    "static/media/learnify.png": "/portfolio_react/static/media/learnify.8fbfcfab0f1017fe9c80.png",
     "static/media/portfolio.png": "/portfolio_react/static/media/portfolio.cbb7716a2fcdab2151f1.png",
     "static/media/portfolio_react.png": "/portfolio_react/static/media/portfolio_react.8a68b54e1f444fa4b6b3.png",
     "static/media/coding_quiz.png": "/portfolio_react/static/media/coding_quiz.dab118034bb570da625d.png",
@@ -15,10 +16,10 @@
     "static/media/navbar_bg.svg": "/portfolio_react/static/media/navbar_bg.0285e118e1c3a0e0778fbacc27bb310f.svg",
     "index.html": "/portfolio_react/index.html",
     "main.c39a4a23.css.map": "/portfolio_react/static/css/main.c39a4a23.css.map",
-    "main.0f4d2852.js.map": "/portfolio_react/static/js/main.0f4d2852.js.map"
+    "main.c6d91d24.js.map": "/portfolio_react/static/js/main.c6d91d24.js.map"
   },
   "entrypoints": [
     "static/css/main.c39a4a23.css",
-    "static/js/main.0f4d2852.js"
+    "static/js/main.c6d91d24.js"
   ]
 }
